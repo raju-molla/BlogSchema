@@ -45,9 +45,9 @@ const commnets= async(req,res)=>{
 } 
 
 const getComnt= async(req,res)=>{
-    try{
+     try{
         const id= req.params.id;
-        await Comment.findOne({_id:id}).populate('text').exec(function(err,data){
+        await Blog.findOne({_id:id}).populate('comment').exec(function(err,data){
             if(err){
                 console.log('error');
             }
